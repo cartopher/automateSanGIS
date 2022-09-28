@@ -1,4 +1,4 @@
-name: newdlgisdata
+name: sangisdownload
 channels:
   - conda-forge
   - defaults
@@ -57,4 +57,4 @@ dependencies:
     - twill==3.0.2
     - urllib3==1.26.12
     - wcwidth==0.2.5
-prefix: C:\Anaconda\envs\newdlgisdata
+prefix: C:\Anaconda\envs\sangisdownload
