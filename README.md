@@ -43,14 +43,25 @@ conda list
 ````
 
 #### Important Imports
+Notice the bottom import is called 'sangis_credentials', this is the name of the Python file that contains our login credentials for the SanGIS/SANDAG GIS Data Warehouse website.
 ````
-#  import all packages
 import os
 import time
 import zipfile
 from twill.commands import *
 from twill import browser
 
-# import the sangis_credentials file to login to the SanGIS website
 import sangis_credentials
+````
+
+#### Creating a Class Object
+
+````
+class sangis_parcels():
+    """encapsulate all methods and variables into a Class object"""
+
+    # assign class variables
+    directory = None
+    filename = None
+    current_month_folder = None
 ````
