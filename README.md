@@ -20,6 +20,14 @@ conda list
 ````
 #### Instructions
 
-Open the Command Prompt and install the package 'twill' by inputting the following lines of code into the command line:
+Open the Anaconda Command Prompt and input the follow line of code to create a new virtual environment: 
+
+conda create --n sangisdownload python=3
+
+Input the following command to activate the environment:
+
+conda activate sangisdownload
+
+Pip install the 'twill' package by inputting the following command:
 
 pip install twill
