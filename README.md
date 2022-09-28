@@ -13,7 +13,7 @@ Note: If you prefer to use an existing virtual environment, all you need to do i
 
 ````
 conda create -n dlgisdata python=3
-conda activate dlgisdata
+conda activate sangisdownload
 pip install twill
 conda list
 ````
