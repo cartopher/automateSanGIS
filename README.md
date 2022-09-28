@@ -32,3 +32,7 @@ Install the 'twill' package using pip by inputting the following command:
 ````
 pip install twill
 ````
+Return a list of packages and ensure the package twill was installed:
+````
+conda list
+````
