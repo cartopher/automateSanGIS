@@ -1,4 +1,4 @@
-# automateSanGIS
+# Automate SanGIS Downloads using Python
 
 ## Workflow
 The steps below explain how Python can automate the ZIP file download process from the SanGIS/SANDAG GIS Data Warehouse website. In this demonstration, the 'Parcels_East.zip' and ‘Assessor_Book.zip’ ZIP files are: 
