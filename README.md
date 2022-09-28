@@ -18,3 +18,8 @@ conda activate sangisdownload
 pip install twill
 conda list
 ````
+#### Instructions
+
+Open the Command Prompt and install the package 'twill' by inputting the following lines of code into the command line:
+
+pip install twill
