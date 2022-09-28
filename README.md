@@ -41,3 +41,16 @@ Return a list of packages and ensure the package twill was installed:
 ````
 conda list
 ````
+
+#### Important Imports
+````
+#  import all packages
+import os
+import time
+import zipfile
+from twill.commands import *
+from twill import browser
+
+# import the sangis_credentials file to login to the SanGIS website
+import sangis_credentials
+````
