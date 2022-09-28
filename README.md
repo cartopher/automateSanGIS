@@ -1,7 +1,7 @@
 # Automate SanGIS Downloads using Python
 
 ## Workflow
-The steps below explain how Python can automate the download process from the SanGIS/SANDAG GIS Data Warehouse website. In this demonstration, we use the "twill" Python package to acesss, download, store, and extract multiple ZIP files to our operating system.
+The instructions listed below describe how Python can be used to automate the download procedure from the SanGIS/SANDAG GIS Data Warehouse website. In this demonstration, we access San Diego's Regional GIS Data Source using the "twill" Python package to download, store, and extract multiple ZIP files to our operating system.
 
 ***twill Package***  
 The Python package "twill," based on requests and lxml packages, is a simplified scripting language developed for programmatic or automated website navigation through a command-line interface. You may use twill to navigate websites that employ forms, cookies, and other common Web features. Moreover, twill provides excellent support for both MySQL and PostgreSQL databases management tasks.
