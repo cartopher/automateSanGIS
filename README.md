@@ -42,7 +42,7 @@ Return a list of packages and ensure the package twill was installed:
 ````
 conda list
 ````
-## Getting Set Up
+## Package Overview
 The Python_Package contains:  
 ````
 sangis_download.py
@@ -51,7 +51,7 @@ sangis_download.py
 sangis_credentials.py
 - for security purposes, this module contains statements that store login credentials to string variables,
 - importing this module into the main module allows these variables to be used during the login process,
-- by doing so, we prevent the visibility of senestive information from being shared in the main module,
+- in this way, we prevent sensitive information from being visible in the main module.
 
 __init__.py
 - used to mark directories on a disk as Python package directories,  
@@ -67,17 +67,17 @@ __init__.py
           - the relative path where ZIP files are downloaded and extracted  
 ````  
 
-*__Note__: The time-stamped folder is created and named after the year and month (ex. 2022_09) the main module is executed. 
-For any reason the main module is executed twice in one month, all downloaded files with the same name in both the 'YYYY_MM' and 'Current' folders will be overwritten.*  
+*__Note__: The time-stamped folder is created and named after the year and month in which the main module is executed (ex. 2022 09). If the main module is executed more than once a month, all downloaded files with the same name in both the 'YYYY_MM' and 'Current' folder directories will be overwritten.*  
 
+## Getting Set Up  
 
-1. Download entire repository to your operating system. Save and extract the contents into a prefered directory. 
+1. Download and extract the entire repository to your operating system in a prefered working directory.
 2. Using your IDE of choice, open the 'Python_Package' as a new project.
-3. Open the 'sangis_credentials.py' Python file and input your username and password used to login to the SanGIS/SANDAG GIS Data Warehouse website.
-4. Open the 'sangis_download.py' file and view the script.
+3. Open the 'sangis_credentials.py' Python file and input your username and password used to log in to the SanGIS/SANDAG GIS Data Warehouse website.
+4. Open the 'sangis_download.py' and use the following information below to help guide your understanding of the logic of the main module.
 
 #### Important Imports
-Notice the bottom import is called 'sangis_credentials', this is the name of the Python file that contains our login credentials for the SanGIS/SANDAG GIS Data Warehouse website.
+Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for the SanGIS/SANDAG GIS Data Warehouse website.
 ````
 import os
 import time
