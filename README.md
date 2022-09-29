@@ -67,7 +67,7 @@ __init__.py
 ````  
 
 *__Note__: The time-stamped folder is created and named after the year and month (ex. 2022_09) the main module is executed. 
-For any reason the main module is executed twice in one month, all downloaded files in both 'YYYY_MM' & 'Current' folders that have the same name will be overwritten.*  
+For any reason the main module is executed twice in one month, all downloaded files with the same name in both the 'YYYY_MM' and 'Current' folders will be overwritten.*  
 
 
 1. Download entire repository to your operating system. Save and extract the contents into a prefered directory. 
