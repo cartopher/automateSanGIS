@@ -50,7 +50,7 @@ sangis_download.py
 
 sangis_credentials.py
 - for security purposes, this module contains statements that store login credentials to string variables,
-- we import this module into the main module so the variables containing the login information can be used during the login process,
+- importing this module into the main module allows these variables to be used during the login process,
 - by doing so, we prevent the visibility of senestive information from being shared in the main module,
 
 __init__.py
