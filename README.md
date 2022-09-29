@@ -194,11 +194,11 @@ class sangis_parcels():
 ````
 def main():
     """Description:"""
-    directory1 = 'C:\\Users\\cchar\\OneDrive\\Desktop\\download\\package\\output\\Roads\\'
+    directory1 = 'INPUT FOLDER DIRECTORY\\Python_Package\\output\\roads\\'
     download1 = sangis_parcels(directory1, "Assessor_Book.zip")
     download1.process_sangis()
 
-    directory2 = 'C:\\Users\\cchar\\OneDrive\\Desktop\\download\\package\\output\\Roads\\'
+    directory2 = 'INPUT FOLDER DIRECTORY\\Python_Package\\output\\parcels\\'
     download2 = sangis_parcels(directory2, "PARCELS_EAST.zip")
     download2.process_sangis()
 
