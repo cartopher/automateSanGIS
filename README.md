@@ -49,8 +49,8 @@ sangis_download.py
 - the main module containing the entire executable script,
 
 sangis_credentials.py
-- this module contains statements that store login credentials to string variables
-- to prevent the visiibilty of sensetive information in the main module, this module is imported into the main module so the string variables can be used,
+- for security purposes, this module contains statements that store login credentials to string variables,
+- this module is imported into the main module so the variables containing the login information can be used,
 
 __init__.py
 - used to mark directories on a disk as Python package directories,  
