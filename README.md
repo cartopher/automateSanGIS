@@ -43,9 +43,9 @@ Return a list of packages and ensure the package twill was installed:
 conda list
 ````
 
-#### Getting Set Up
-1. Download entire repository to your operating system. Save and extract the contents in your prefered directory. 
-2. Open the 'Python_Package' project folder in your IDE of choice. 
+## Getting Set Up
+1. Download entire repository to your operating system. Save and extract the contents into a prefered directory. 
+2. Using your IDE of choice, open the 'Python_Package' as a new project.
 3. Open the 'sangis_credentials.py' Python file and input your username and password used to login to the SanGIS/SANDAG GIS Data Warehouse website.
 4. Open the 'sangis_download.py' file and view the script.
 
