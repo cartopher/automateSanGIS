@@ -15,7 +15,6 @@ twill’s Python API (https://twill-tools.github.io/twill/python-api.html#python
 
 Note: If you prefer to use an existing virtual environment, all you need to do is run the ‘pip install twill’ command.
 
-### Instructions
 The list of commands used:
 ````
 conda create -n dlgisdata python=3
@@ -23,6 +22,7 @@ conda activate sangisdownload
 pip install twill
 conda list
 ````
+### Instructions  
 #### Create a Virtual Environment using Anaconda
 
 Open the Anaconda Command Prompt and input the follow line of code to create a new virtual environment: 
