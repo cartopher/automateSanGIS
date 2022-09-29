@@ -60,7 +60,7 @@ __init__.py
 - the parent folder directory that contains multiple subdirectories where ZIP files are downloaded and extracted,  
 
 'Parcels' and 'Roads' folders
-- subdirectories of the output folder and the parent folder of two additional subdirectories:
+- subdirectories of the output folder and the parent folders of two additional subdirectories:
        1) 'YYYY_MM' folder 
           - the relative path where ZIP files are downloaded and unextracted  
        2) 'Current' folder 
