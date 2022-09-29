@@ -46,13 +46,19 @@ conda list
 The Python_Package contains:  
 
 sangis_download.py --> the main module, 
+
 sangis_credentials.py --> a module for storing login credentials,  
+
 __init__.py --> used to mark directories on a disk as Python package directories,  
-'output' folder --> the parent folder directory that contains multiple subdirectories where downloaded ZIP files are stored and extracted,
+
+'output' folder --> the parent folder directory that contains multiple subdirectories where downloaded ZIP files are stored and extracted,  
+
 'Parcels' or 'Roads' folder --> subdirectories of the output folder and the parent folder of two additional subdirectories:
        1) 'YYYY_MM' folder --> the relative path where downloaded ZIP files are stored and unextracted  
        2) 'Current' folder --> the relative path where downloaded ZIP files are stored and extracted  
+
 Note: The time-stamped folder is created and named after the year and month (ex. 2022_09) the main module is executed. For any reason the main module is executed twice in one month, any downloaded files in both these folders with the same name will be overwritten.  
+
 
 1. Download entire repository to your operating system. Save and extract the contents into a prefered directory. 
 2. Using your IDE of choice, open the 'Python_Package' as a new project.
