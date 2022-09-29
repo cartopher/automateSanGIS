@@ -46,10 +46,11 @@ conda list
 The Python_Package contains:  
 ````
 sangis_download.py
-- the main module
+- the main module containing the entire executable script,
 
 sangis_credentials.py
-- a module for storing login credentials,  
+- for security purposes, this module is used for protecting login credentials by assigning them to variables,
+- this module is imported into the sangis_download.py module so the variables containing the login information can be used,
 
 __init__.py
 - used to mark directories on a disk as Python package directories,  
