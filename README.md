@@ -128,7 +128,7 @@ class sangis_parcels():
         fv("1", "ctl00$MainContent$Password", sangis_credentials.password)
         submit('0')
         
- #### Create Download Function
+#### Create Download Function
  
      def downloadZippedFile(self):
         """Description:"""
@@ -143,9 +143,9 @@ class sangis_parcels():
         with open(self.filename, "wb") as bf:
             bf.write(browser.dump)
             
-  #### Create Zip File Extraction Function
+#### Create Zip File Extraction Function
             
-                def extractZippedFile(self):
+     def extractZippedFile(self):
         """Description:"""
 
         myzip = zipfile.ZipFile(
@@ -155,3 +155,54 @@ class sangis_parcels():
 
         # close the ZIP file
         myzip.close()
+        
+#### Create a Function for Exception and Handling
+            
+    def process_sangis(self):
+        """Description:"""
+
+        # call each method within each try, catch and exception
+        try:
+            self.changeDirectory()
+        except Exception as e:
+            print("Exception when trying to change directory")
+            print(print(str(e)))
+            return
+
+        try:
+            self.login()
+        except Exception as e:
+            print("Exception when trying to go to the specified URL")
+            print(print(str(e)))
+            return
+
+        try:
+            self.downloadZippedFile()
+        except Exception as e:
+            print("Exception when trying to download zipped file")
+            print(print(str(e)))
+            return
+
+        try:
+            self.extractZippedFile()
+        except Exception as e:
+            print("Exception when trying to extract zipped file")
+            print(print(str(e)))
+            return
+            
+#### Define the Main Method
+````
+def main():
+    """Description:"""
+    directory1 = 'C:\\Users\\cchar\\OneDrive\\Desktop\\download\\package\\output\\Roads\\'
+    download1 = sangis_parcels(directory1, "Assessor_Book.zip")
+    download1.process_sangis()
+
+    directory2 = 'C:\\Users\\cchar\\OneDrive\\Desktop\\download\\package\\output\\Roads\\'
+    download2 = sangis_parcels(directory2, "PARCELS_EAST.zip")
+    download2.process_sangis()
+
+
+if __name__ == '__main__':
+    main()
+````
