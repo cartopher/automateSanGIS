@@ -70,3 +70,19 @@ class sangis_parcels():
     filename = None
     current_month_folder = None
 ````
+
+#### Create Constructor and Set Parameters
+
+````
+    def __init__(self, directory, filename):
+        """constructor creates class variables and methods
+        :param self: pass 'self' to access variables coming from the constructor
+        :param directory: a file path for all output files
+        :param filename: the name of output files
+        :param current_month_folder: a file path to the time-stamped folder
+        """
+
+        # initialize class variables
+        self.directory = directory
+        self.filename = filename
+````
