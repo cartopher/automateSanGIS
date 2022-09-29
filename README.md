@@ -45,7 +45,7 @@ conda list
 ## Getting Set Up
 The Python_Package contains:  
 ````
-**sangis_download.py** 
+__sangis_download.py__ 
 - the main module
 
 **sangis_credentials.py**  
