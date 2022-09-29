@@ -86,3 +86,72 @@ class sangis_parcels():
         self.directory = directory
         self.filename = filename
 ````
+
+#### Create Directory Function
+
+    def changeDirectory(self):
+        """Description:"""
+
+        directoryPath = self.directory
+
+        # store the current year and date into a variable
+        currentMonth = time.strftime("%Y_%m")
+
+        # create a time-stamped folder and in the directory location
+        if os.path.isdir(directoryPath + currentMonth):
+            print("Directory already exists")
+        else:
+            print("Creating directory for you")
+            os.mkdir(directoryPath + currentMonth)
+
+        # change the current working directory to the time-stamped folder
+        os.chdir(directoryPath + currentMonth)
+
+        # assign the current working directory to the time-stamped folder
+        directory = os.getcwd()
+
+        self.current_month_folder = directory
+
+        print(directory)
+        
+ #### Create Login Function
+ 
+     def login(self):
+        """Description:"""
+
+        # talk to the web browser directly
+        go('https://rdw.sandag.org/Account/Login')
+        showforms()
+
+        # input login credentials
+        fv("1", "ctl00$MainContent$Email", sangis_credentials.username)
+        fv("1", "ctl00$MainContent$Password", sangis_credentials.password)
+        submit('0')
+        
+ #### Create Download Function
+ 
+     def downloadZippedFile(self):
+        """Description:"""
+
+        # navigate to the parcels download page and initiate the download process
+        go("gisdtview.aspx?dir=Parcel")
+        go("GetFSFile.aspx?dir=Parcel&Name=" + self.filename)
+
+        # open file for writing in binary format
+        # overwrite the file if it exists
+        # if the file does not exist, create new file for writing
+        with open(self.filename, "wb") as bf:
+            bf.write(browser.dump)
+            
+  #### Create Zip File Extraction Function
+            
+                def extractZippedFile(self):
+        """Description:"""
+
+        myzip = zipfile.ZipFile(
+            self.current_month_folder + "\\" + self.filename, 'r')
+
+        myzip.extractall(self.directory + "Current")
+
+        # close the ZIP file
+        myzip.close()
