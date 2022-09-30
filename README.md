@@ -25,7 +25,7 @@ conda list
 
 Open the Anaconda Command Prompt and input the follow line of code to create a new virtual environment: 
 ````
-conda create --n sangisdownload python=3
+conda create -n sangisdownload python=3
 ````
 Input the following command to activate the environment:
 ````
@@ -42,28 +42,28 @@ conda list
 ````
 ## Package Overview
 The Python_Package contains:  
-````
-sangis_download.py
+
+`sangis_download.py`
 - The main module containing the entire executable script,
 
-sangis_credentials.py
+`sangis_credentials.py`
 - For security purposes, this module contains statements that store login credentials to string variables,
 - Importing this module into the main module allows these variables to be used during the login process,
 - In this way, we prevent the visibilitly of sensitive information in the main module,
 
-__init__.py
+`__init__.py`
 - Used to mark directories on a disk as Python package directories,  
 
-'output' directory
+`output` directory
 - The parent directory that contains multiple subdirectories where ZIP files are downloaded and extracted,  
 
-'Parcels' and 'Roads' subdirectories
-- Child folders of the output folder and the parent folders of two subdirectories:
-       1. 'YYYY_MM' directory ("date-stamped", ex. 2022_09)
-          - The working directory where ZIP files are downloaded and unextracted  
-       2. 'Current' directory 
+`Parcels` and `Roads` subdirectories
+- Child folders of the output folder and the parent folders of two subdirectories:  
+       1. 'YYYY_MM' directory ("date-stamped", ex. 2022_09)  
+          - The working directory where ZIP files are downloaded and unextracted   
+       2. 'Current' directory  
           - The working directory where ZIP files are downloaded and extracted  
-````  
+ 
 
 *__Note__: The time-stamped folder is created and named after the year and month in which the main module is executed (ex. 2022_09).  
 If the main module is executed more than once a month, all downloaded files with the same name in both the __'YYYY_MM'__ and __'Current'__ folder directories will be overwritten.*  
