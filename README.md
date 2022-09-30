@@ -89,8 +89,10 @@ import sangis_credentials
 ````
 
 #### Creating a Class Object & Constructor
-Encapsulate all methods and variables into a Class Object and initialize the process  
-The \__init__() function is always executed when an object is created from this class and can be used to initialize some class variables
+Encapsulate all variables and functions into a Class Object 
+The \__init__() function is always executed when an object is created from this class and can be used to initialize some class variables  
+In this case, \__init__() was executed, initializing class variables for the directory and filename for the SanGISDownload process.
+For the directory and filename, we pass our own variables to the class which was taken in by the \__init__(). In the case of the "current_month_folder" variable, it was initialized on the creation of the object, but not within the \__init__().
 ````
 class SanGISDownload():
 
@@ -105,7 +107,9 @@ class SanGISDownload():
         self.filename = filename
 ````
 
-#### Create Method for Directory
+#### Create Class Function for Directory
+This class function creates a new folder and names it based on the current year and month the main module is executed.  
+The time-stamped folder becomes the relative path to where ZIP files are downloaded and unextracted.
 
     def changeDirectory(self):
         directoryPath = self.directory
