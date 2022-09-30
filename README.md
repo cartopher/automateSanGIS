@@ -76,8 +76,6 @@ __init__.py
 3. Open the 'sangis_credentials.py' Python file and input your username and password used to log in to the SanGIS/SANDAG GIS Data Warehouse website.
 4. Open the 'sangis_download.py' and use the following information below to help guide your understanding of the logic of the main module.
 
-The entire script is modularized by each process
-
 #### Important Imports
 Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for the SanGIS/SANDAG GIS Data Warehouse website.
 ````
@@ -90,21 +88,16 @@ from twill import browser
 import sangis_credentials
 ````
 
-#### Creating a Class Object
-
+#### Creating a Class Object & Constructor
+Encapsulate all methods and variables into a Class object"""
 ````
 class sangis_parcels():
-    """encapsulate all methods and variables into a Class object"""
 
     # assign class variables
     directory = None
     filename = None
     current_month_folder = None
-````
-
-#### Create Constructor and Set Parameters
-
-````
+    
     def __init__(self, directory, filename):
         """constructor creates class variables and methods
         :param self: pass 'self' to access variables coming from the constructor
