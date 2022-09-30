@@ -89,7 +89,7 @@ import sangis_credentials
 ````
 
 #### Creating a Class Object & Constructor
-Encapsulate all methods and variables into a Class Object and initialize the process
+Encapsulate all methods and variables into a Class Object and initialize the process  
 The \__init__() function is always executed when an object is created from this class and can be used to initialize some class variables
 ````
 class SanGISDownload():
