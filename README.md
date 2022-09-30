@@ -13,7 +13,7 @@ twill’s Python API (https://twill-tools.github.io/twill/python-api.html#python
 
 ## Installation
 
-*__Note: If you prefer to use an existing virtual environment, all you need to do is run the ‘pip install twill’ command.__*
+*__Note__: If you prefer to use an existing virtual environment, all you need to do is run the ‘pip install twill’ command.*
 
 The list of commands used:
 ````
