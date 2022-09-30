@@ -89,7 +89,7 @@ import sangis_credentials
 ````
 
 #### Creating a Class Object & Constructor
-Encapsulate all methods and variables into a Class object"""
+Encapsulate all methods and variables into a Class Object and initialize the process
 ````
 class sangis_parcels():
 
