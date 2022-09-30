@@ -1,4 +1,4 @@
-# Automate SanGIS Downloads using Python  
+# Automate SanGIS using Python  
 Manually downloading countless files onto our operating systems is repetitive, inefficient, and expensive. But it doesn't have to be that way. Python offers a way to streamline and automate these time-consuming processes if you're looking to cut costs. In this demonstration, I outline how to use Python's "twill" package to access and navigate the SanGIS/SANDAG GIS Data Warehouse website t o download and extract multiple ZIP files to specific output directories on our operating system. The script modularizes and thoroughly explains each procedure so that you can quickly learn how to include it into your project activities.
 
 ### Overview of twill's Python API ###  
