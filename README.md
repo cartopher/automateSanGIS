@@ -72,13 +72,13 @@ If the main module is executed more than once a month, all downloaded files with
 
 ## Getting Set Up  
 
-1. Download and extract the entire repository to your operating system in a prefered working directory.
+1. Download and extract this entire repository to your prefered working directory.
 2. Using your IDE of choice, open the 'Python_Package' as a new project.
 3. Open the 'sangis_credentials.py' Python file and input your username and password used to log in to the SanGIS/SANDAG GIS Data Warehouse website.
-4. Open the 'sangis_download.py' and use the following information below to help guide your understanding of the logic of the main module.  
+4. Open the 'sangis_download.py', file and refer to the formation below to help guide your understanding of the main module's logic.  
 
 ### Important Imports
-Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for accessing the SanGIS/SANDAG GIS Data Warehouse website. Importing the module allows us to access those variables and use them in our main module. We carryout this process in the loginCredentials() Class Method below.
+Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for accessing the SanGIS/SANDAG GIS Data Warehouse website. Importing the module allows us to access and use those variables in our main module. We carry out this process in the loginCredentials() Class Method below.
 ````
 import os
 import time
