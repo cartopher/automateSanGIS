@@ -67,7 +67,8 @@ __init__.py
           - the working directory where ZIP files are downloaded and extracted  
 ````  
 
-*__Note__: The time-stamped folder is created and named after the year and month in which the main module is executed (ex. 2022 09). If the main module is executed more than once a month, all downloaded files with the same name in both the 'YYYY_MM' and 'Current' folder directories will be overwritten.*  
+*__Note__: The time-stamped folder is created and named after the year and month in which the main module is executed (ex. 2022_09).  
+If the main module is executed more than once a month, all downloaded files with the same name in both the 'YYYY_MM' and 'Current' folder directories will be overwritten.*  
 
 ## Getting Set Up  
 
