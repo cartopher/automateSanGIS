@@ -90,38 +90,30 @@ import sangis_credentials
 
 #### Creating a Class Object & Constructor
 Encapsulate all methods and variables into a Class Object and initialize the process
+The __init__() function is always executed when an object is created from this class and can be used to initialize some class variables
 ````
-class sangis_parcels():
+class SanGISDownload():
 
     # assign class variables
     directory = None
     filename = None
     current_month_folder = None
     
+    # create a constructor and initialize class variables
     def __init__(self, directory, filename):
-        """constructor creates class variables and methods
-        :param self: pass 'self' to access variables coming from the constructor
-        :param directory: a file path for all output files
-        :param filename: the name of output files
-        :param current_month_folder: a file path to the time-stamped folder
-        """
-
-        # initialize class variables
         self.directory = directory
         self.filename = filename
 ````
 
-#### Create Directory Function
+#### Create Method for Directory
 
     def changeDirectory(self):
-        """Description:"""
-
         directoryPath = self.directory
 
-        # store the current year and date into a variable
+        # store the current YYYY_MM into a variable
         currentMonth = time.strftime("%Y_%m")
 
-        # create a time-stamped folder and in the directory location
+        # create a time-stamped folder
         if os.path.isdir(directoryPath + currentMonth):
             print("Directory already exists")
         else:
@@ -141,7 +133,6 @@ class sangis_parcels():
  #### Create Login Function
  
      def login(self):
-        """Description:"""
 
         # talk to the web browser directly
         go('https://rdw.sandag.org/Account/Login')
@@ -155,7 +146,6 @@ class sangis_parcels():
 #### Create Download Function
  
      def downloadZippedFile(self):
-        """Description:"""
 
         # navigate to the parcels download page and initiate the download process
         go("gisdtview.aspx?dir=Parcel")
@@ -170,7 +160,6 @@ class sangis_parcels():
 #### Create Zip File Extraction Function
             
      def extractZippedFile(self):
-        """Description:"""
 
         myzip = zipfile.ZipFile(
             self.current_month_folder + "\\" + self.filename, 'r')
@@ -183,7 +172,6 @@ class sangis_parcels():
 #### Create a Function for Exception and Handling
             
     def process_sangis(self):
-        """Description:"""
 
         # call each method within each try, catch and exception
         try:
@@ -219,11 +207,11 @@ class sangis_parcels():
 def main():
     """Description:"""
     directory1 = 'INPUT FOLDER DIRECTORY\\Python_Package\\output\\roads\\'
-    download1 = sangis_parcels(directory1, "Assessor_Book.zip")
+    download1 = SanGISDownload(directory1, "Assessor_Book.zip")
     download1.process_sangis()
 
     directory2 = 'INPUT FOLDER DIRECTORY\\Python_Package\\output\\parcels\\'
-    download2 = sangis_parcels(directory2, "PARCELS_EAST.zip")
+    download2 = SanGISDownload(directory2, "PARCELS_EAST.zip")
     download2.process_sangis()
 
 
