@@ -111,9 +111,9 @@ class SanGISDownload:
         self.current_month_folder = None
 ````
 
-### buildDirectory() Method  
-Now that we have Created our Class and Constructor, we are Free to Access and Modify our Objects Attributes in our Methods.  
-For our first Class Method, we will Build our Directories to Ensure all ZIP files are Downloaded and Organized into Specific Directories.   
+### buildDirectory() Method   
+Now that we have created our Class Constructor,, we are free to accesss and modify our Class Objects Attributes in our Methods.
+For out first Class Method, we will build out directories to ensure all ZIP files are downloaded and organized into specific output directories.
 ````
     def buildDirectory(self):
         """Creates "date-stamped" subdirectories,
@@ -202,8 +202,8 @@ Class Method for extracting ZIP file(s).
         print(self.filename)
 ````        
 ### processSanGIS() Method  
-Here, we Build a Class Method to Handle Exceptions (errors) that Occur During our Runtime (execution) of the Program.  
-We Handle these Expections Gracefully using Try and Exception Statements. For Example, if the Try Block Raises an Exception, the Except Block will Return the Exception that may be Caused by the Try Block.  
+Here, we build a Class Method to Handle Exceptions (errors) that occur during our Runtime (execution) of the program.  
+We Handle these Expections gracefully using Try and Exception Statements. For Example, if the Try Block Raises an Exception, the Except Block will Return the Exception that may be caused by the Try Block.  
 ````           
     def processSanGIS(self):
         """ try block: contains the code that may cause the exception.
