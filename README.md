@@ -77,7 +77,7 @@ If the main module is executed more than once a month, all downloaded files with
 3. Open the 'sangis_credentials.py' Python file and input your username and password used to log in to the SanGIS/SANDAG GIS Data Warehouse website.
 4. Open the 'sangis_download.py' and use the following information below to help guide your understanding of the logic of the main module.  
 
-#### Important Imports
+### Important Imports
 Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for accessing the SanGIS/SANDAG GIS Data Warehouse website. Importing the module allows us to access those variables and use them in our main module. We carryout this process in the loginCredentials() Class Method below.
 ````
 import os
@@ -89,7 +89,7 @@ from twill import browser
 import sangis_credentials
 ````
 
-#### Class Object & Constructor Method  
+### Class Object & Constructor Method  
 Description:
 ````
 # Create a SanGISDownload Class Object & encapsulate all methods and variables.
@@ -98,17 +98,17 @@ class SanGISDownload:
     # Create constructor, set the parameters, and initialize class variables.
     def __init__(self, directory, filename):
         """Constructor initializes some class variables.
-        :param self: pass 'self' to access variables coming from the constructor
-        :param directory: a complete path of directory to be changed to new directory path.
-        :param filename: the name of downloaded file(s).
-        """
+           :param self: pass 'self' to access variables coming from the constructor
+           :param directory: a complete path of directory to be changed to new directory path.
+           :param filename: the name of downloaded file(s)."""
+           
         # Initialize class variables
         self.directory = directory
         self.filename = filename
         self. current_month_folder = None
 ````
 
-#### changeDirectory() Method  
+### changeDirectory() Method  
 Now that we have created our Class and Constructor, we are free to access or modify our objects attributes in our Methods.  
 For our first Class Method, we will create and change directories to ensure all ZIP files are downloaded and extracted in an organized workflow each month.  
 ````
@@ -142,7 +142,7 @@ For our first Class Method, we will create and change directories to ensure all 
         # Print the new current working directory
         print(directory)
 ````
- #### loginCredentials() Method  
+ ### loginCredentials() Method  
  Description:    
 ```` 
      def loginCredentials(self):
@@ -154,7 +154,7 @@ For our first Class Method, we will create and change directories to ensure all 
         fv("1", "ctl00$MainContent$Password", sangis_credentials.password)
         submit('0')
 ````     
-#### downloadZippedFile() Method  
+### downloadZippedFile() Method  
 Description:  
 ````
      def downloadZippedFile(self):
@@ -165,7 +165,7 @@ Description:
         with open(self.filename, "wb") as bf:
             bf.write(browser.dump)
 ````            
-#### extractZippedFile() Method  
+### extractZippedFile() Method  
 Description:  
 ````            
      def extractZippedFile(self):
@@ -178,7 +178,7 @@ Description:
         # close the ZIP file
         myzip.close()
 ````        
-#### processSanGIS() Method  
+### processSanGIS() Method  
 Here, we build a Class Method to handle exceptions (errors) that occur during our runtime (execution) of the program.  
 We handle these expections gracefully using try and exception statements.  
 For example, if the try block raises an exception, the except block will return the exception that may be caused by the try block.  
@@ -214,7 +214,7 @@ For example, if the try block raises an exception, the except block will return 
             print(print(str(e)))
             return
 ````            
-#### main() Method  
+### main() Method  
 Description:  
 ````
 def main():
