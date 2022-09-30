@@ -61,10 +61,10 @@ __init__.py
 
 'Parcels' and 'Roads' folders
 - subdirectories of the output folder and the parent folders of two additional subdirectories:
-       1) 'YYYY_MM' folder 
-          - the relative path where ZIP files are downloaded and unextracted  
-       2) 'Current' folder 
-          - the relative path where ZIP files are downloaded and extracted  
+       1. 'YYYY_MM' folder ("date-stamped", ex. 2022_09)
+          - the working directory where ZIP files are downloaded and unextracted  
+       2. 'Current' folder 
+          - the working directory where ZIP files are downloaded and extracted  
 ````  
 
 *__Note__: The time-stamped folder is created and named after the year and month in which the main module is executed (ex. 2022 09). If the main module is executed more than once a month, all downloaded files with the same name in both the 'YYYY_MM' and 'Current' folder directories will be overwritten.*  
@@ -74,10 +74,10 @@ __init__.py
 1. Download and extract the entire repository to your operating system in a prefered working directory.
 2. Using your IDE of choice, open the 'Python_Package' as a new project.
 3. Open the 'sangis_credentials.py' Python file and input your username and password used to log in to the SanGIS/SANDAG GIS Data Warehouse website.
-4. Open the 'sangis_download.py' and use the following information below to help guide your understanding of the logic of the main module.
+4. Open the 'sangis_download.py' and use the following information below to help guide your understanding of the logic of the main module.  
 
 #### Important Imports
-Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for the SanGIS/SANDAG GIS Data Warehouse website.
+Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for accessing the SanGIS/SANDAG GIS Data Warehouse website.
 ````
 import os
 import time
@@ -88,81 +88,85 @@ from twill import browser
 import sangis_credentials
 ````
 
-#### Creating a Class Object & Constructor
-Encapsulate all variables and functions into a Class Object 
-The \__init__() function is always executed when an object is created from this class and can be used to initialize some class variables  
-In this case, \__init__() was executed, initializing class variables for the directory and filename for the SanGISDownload process.
-For the directory and filename, we pass our own variables to the class which was taken in by the \__init__(). In the case of the "current_month_folder" variable, it was initialized on the creation of the object, but not within the \__init__().
+#### Class Object & Constructor Method  
+Description:
 ````
-class SanGISDownload():
+# Create a SanGISDownload Class Object & encapsulate all methods and variables.
+class SanGISDownload:
 
-    # assign class variables
-    directory = None
-    filename = None
-    current_month_folder = None
-    
-    # create a constructor and initialize class variables
+    # Create constructor, set the parameters, and initialize class variables.
     def __init__(self, directory, filename):
+        """Constructor initializes some class variables.
+        :param self: pass 'self' to access variables coming from the constructor
+        :param directory: a complete path of directory to be changed to new directory path.
+        :param filename: the name of downloaded file(s).
+        """
+        # Initialize class variables
         self.directory = directory
         self.filename = filename
+        self. current_month_folder = None
 ````
 
-#### Create Class Function for Directory
-This class function creates a new folder and names it based on the current year and month the main module is executed.  
-The time-stamped folder becomes the relative path to where ZIP files are downloaded and unextracted.
-
+#### changeDirectory() Method  
+Now that we have created our Class and Constructor, we are free to access or modify our objects attributes in our Methods.  
+For our first Class Method, we will create and change directories to ensure all ZIP files are downloaded and extracted in an organized workflow each month.  
+````
     def changeDirectory(self):
+        """Creates a "date-stamped" subdirectory (folder).
+           Changes the current working directory to specified path.
+           :param current_month_folder: a file path to the date-stamped folder(s)"""
+
+        # Modify attribute properties
         directoryPath = self.directory
 
-        # store the current YYYY_MM into a variable
+        # Store the current year and month to a variable.
         currentMonth = time.strftime("%Y_%m")
 
-        # create a time-stamped folder
+        # Create a new directory (folder) if it does not already exist.
         if os.path.isdir(directoryPath + currentMonth):
             print("Directory already exists")
         else:
             print("Creating directory for you")
             os.mkdir(directoryPath + currentMonth)
 
-        # change the current working directory to the time-stamped folder
+        # Change the current working directory to the date-stamped folder.
         os.chdir(directoryPath + currentMonth)
 
-        # assign the current working directory to the time-stamped folder
+        # Fetch and assign the current directory
         directory = os.getcwd()
 
+        # Reassign the current directory
         self.current_month_folder = directory
 
+        # Print the new current working directory
         print(directory)
-        
- #### Create Login Function
- 
-     def login(self):
+````
+ #### loginCredentials() Method  
+ Description:    
+```` 
+     def loginCredentials(self):
 
-        # talk to the web browser directly
         go('https://rdw.sandag.org/Account/Login')
         showforms()
 
-        # input login credentials
         fv("1", "ctl00$MainContent$Email", sangis_credentials.username)
         fv("1", "ctl00$MainContent$Password", sangis_credentials.password)
         submit('0')
-        
-#### Create Download Function
- 
+````     
+#### downloadZippedFile() Method  
+Description:  
+````
      def downloadZippedFile(self):
 
-        # navigate to the parcels download page and initiate the download process
         go("gisdtview.aspx?dir=Parcel")
         go("GetFSFile.aspx?dir=Parcel&Name=" + self.filename)
 
-        # open file for writing in binary format
-        # overwrite the file if it exists
-        # if the file does not exist, create new file for writing
         with open(self.filename, "wb") as bf:
             bf.write(browser.dump)
-            
-#### Create Zip File Extraction Function
-            
+````            
+#### extractZippedFile() Method  
+Description:  
+````            
      def extractZippedFile(self):
 
         myzip = zipfile.ZipFile(
@@ -172,12 +176,15 @@ The time-stamped folder becomes the relative path to where ZIP files are downloa
 
         # close the ZIP file
         myzip.close()
-        
-#### Create a Function for Exception and Handling
-            
-    def process_sangis(self):
-
-        # call each method within each try, catch and exception
+````        
+#### processSanGIS() Method  
+Here, we build a Class Method to handle exceptions (errors) that occur during our runtime (execution) of the program.  
+We handle these expections gracefully using try and exception statements.  
+For example, if the try block raises an exception, the except block will return the exception that may be caused by the try block.  
+````           
+    def processSanGIS(self):
+        """ try block: contains the code that may cause the exception.
+             except block: returns the exception that may be caused by the try block."""
         try:
             self.changeDirectory()
         except Exception as e:
@@ -186,7 +193,7 @@ The time-stamped folder becomes the relative path to where ZIP files are downloa
             return
 
         try:
-            self.login()
+            self.loginTo()
         except Exception as e:
             print("Exception when trying to go to the specified URL")
             print(print(str(e)))
@@ -205,18 +212,18 @@ The time-stamped folder becomes the relative path to where ZIP files are downloa
             print("Exception when trying to extract zipped file")
             print(print(str(e)))
             return
-            
-#### Define the Main Method
+````            
+#### main() Method  
+Description:  
 ````
 def main():
-    """Description:"""
     directory1 = 'INPUT FOLDER DIRECTORY\\Python_Package\\output\\roads\\'
     download1 = SanGISDownload(directory1, "Assessor_Book.zip")
-    download1.process_sangis()
+    download1.processSanGIS()
 
     directory2 = 'INPUT FOLDER DIRECTORY\\Python_Package\\output\\parcels\\'
     download2 = SanGISDownload(directory2, "PARCELS_EAST.zip")
-    download2.process_sangis()
+    download2.processSanGIS()
 
 
 if __name__ == '__main__':
