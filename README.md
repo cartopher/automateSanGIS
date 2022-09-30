@@ -77,7 +77,7 @@ __init__.py
 4. Open the 'sangis_download.py' and use the following information below to help guide your understanding of the logic of the main module.  
 
 #### Important Imports
-Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for accessing the SanGIS/SANDAG GIS Data Warehouse website.
+Notice the bottom import is called 'sangis_credentials'; this is the name of the Python file that contains our login credentials for accessing the SanGIS/SANDAG GIS Data Warehouse website. Importing the module allows us to access those variables and use them in our main module. The process is carried out in the loginCredentials() Class Method.
 ````
 import os
 import time
