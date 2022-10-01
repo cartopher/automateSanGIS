@@ -1,8 +1,8 @@
 # Automate SanGIS using Python  
-Manually downloading countless files onto our operating systems is repetitive, inefficient, and expensive. But it doesn't have to be that way. Python offers a way to streamline and automate these time-consuming processes if you're looking to cut costs. In this demonstration, I outline how to use Python's "twill" package to access and navigate the SanGIS/SANDAG GIS Data Warehouse website t o download and extract multiple ZIP files to specific output directories on our operating system. The script modularizes and thoroughly explains each procedure so that you can quickly learn how to include it into your project activities.
+Manually downloading countless files onto our operating systems is repetitive, inefficient, and expensive. But it doesn't have to be that way. Python offers a way to cut costs considerably by streamlining and automating these time-consuming processes. In this demonstration, I outline how to use Python's "twill" package to access and navigate the SanGIS/SANDAG GIS Data Warehouse website so we can download and extract multiple ZIP files to our operating system. While at the same time, we automate how we want our output directories structured each time we run the program, making it easy to locate the files we are looking for, lending itself nicely to code reproducibility. The script below is modularized and thoroughly explains how each process is executed so that you can quickly learn how to implement it into your project activities.
 
 ### Overview of twill's Python API ###  
-The Python package "twill," based on requests and lxml packages, is a simplified scripting language developed for programmatic or automated website navigation through a command-line interface. You may use twill to navigate websites that employ forms, cookies, and other common Web features. Moreover, twill provides excellent support for both MySQL and PostgreSQL databases management tasks.
+The Python package "twill," is based on requests and lxml packages and is described as a simplified scripting language developed for programmatic or automated website navigation through a command-line interface. You may use twill to navigate websites that employ forms, cookies, and other standard Web features. Moreover, twill provides excellent support for both MySQL and PostgreSQL database management tasks.
 
 For more about the 'twill' package, see:  
 twill Project Description (https://pypi.org/project/twill/)  
@@ -43,27 +43,14 @@ conda list
 ## Package Overview
 The Python_Package contains:  
 
-`sangis_download.py`
-- The main module containing the entire executable script,
-
-`sangis_credentials.py`
-- For security purposes, this module contains statements that store login credentials to string variables,
-- Importing this module into the main module allows these variables to be used during the login process,
-- In this way, we prevent the visibilitly of sensitive information in the main module,
-
-`__init__.py`
-- Used to mark directories on a disk as Python package directories,  
-
-`output` directory
-- The parent directory that contains multiple subdirectories where ZIP files are downloaded and extracted,  
-
-`Parcels` and `Roads` subdirectories
-- Child folders of the output folder and the parent folders of two subdirectories:  
-       1. 'YYYY_MM' directory ("date-stamped", ex. 2022_09)  
-          - The working directory where ZIP files are downloaded and unextracted   
-       2. 'Current' directory  
-          - The working directory where ZIP files are downloaded and extracted  
- 
+| Module | Description |
+| --- | --- |
+| `sangis_download.py` | The main module that runs the entire process |
+| `sangis_credentials.py` | A module used to secure sensative information from being visible |
+| `__init__.py` | A module used to mark directories on a disk as Python package directories |
+| `output` directory | The parent directory that contains multiple subdirectories |
+| `Parcels` directory | A subdirectory for storing and extracting parcel files |
+| `Roads` directory | A subdirectory for storing and extracting road files |
 
 *__Note__: The time-stamped folder is created and named after the year and month in which the main module is executed (ex. 2022_09).  
 If the main module is executed more than once a month, all downloaded files with the same name in both the __'YYYY_MM'__ and __'Current'__ folder directories will be overwritten.*  
@@ -99,9 +86,9 @@ Create a SanGISDownload Class Object & Encapsulate all Methods and Variables.
 class SanGISDownload:
     def __init__(self, directory, filename):
         """SanGISDownload  Class Constructor,
-             :param self: pass 'self' to access variables coming from the constructor,
-             :param directory: output file path (string),
-             :param filename: output filename(s) (string), """
+           :param self: pass 'self' to access variables coming from the constructor,
+           :param directory: output file path (string),
+           :param filename: output filename(s) (string), """
         
         # Initialize Class Variables,
         self.directory = directory
@@ -121,7 +108,7 @@ For out first Class Method, we will build out directories to ensure all ZIP file
         # Modify attribute properties,
         directoryPath = self.directory
 
-        # Store the current year and month to a variable,
+        # The strftime() method converts a date object in a String
         currentMonth = time.strftime("%Y_%m")
 
         # Create a new directory (folder) if it does not already exist,
