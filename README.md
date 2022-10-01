@@ -41,26 +41,29 @@ Return a list of packages and ensure the package twill was installed:
 conda list
 ````
 ## Package Overview
-The Python_Package contains:  
+
+#### Modules ####
 
 | Module | Description |
 | --- | --- |
 | `sangis_download.py` | The main module that runs the entire process |
 | `sangis_credentials.py` | A module used to secure sensative information from being visible |
-| `__init__.py` | A module used to mark directories on a disk as Python package directories |
+| `__init__.py` | A module used to mark directories on a disk as Python package directories |  
 
-| Parent Output Directories | Description |
+#### Diectories ####
+
+| Parent Output  | Description |
 | --- | --- |
 | `output`  | The parent directory that contains multiple subdirectories |
 | `Parcels` | A subdirectory of the output used for storing and extracting parcel files |
 | `Roads`   | A subdirectory of the output for storing and extracting road files |
 
-# Created or Overwritten Output Subdirectories
+#### Subdirectories ####
 
-| Child Output Directories | Description |
+| Child Output | Description |
 | --- | --- |
-| `YYYY_MM` directory | A subdirectory created and one of the working directories where ZIP files are downloaded to, but not *unextracted* |
-| `'Current'` directory | A subdirectory created and one of the working directories where ZIP files are downloaded and *extracted* |
+| `YYYY_MM`  | A generated subdirectory, and one of the working directories unextracted zipped files are downloaded to |
+| `Current` | A generated subdirectory, and one of the working directories extracted zipped files are downloaded to |
 
 *__Note__: There are a few instances you should keep in mind about the child output directories.
 
