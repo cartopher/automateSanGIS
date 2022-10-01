@@ -73,7 +73,9 @@ __2.__ In the case of the __'Current'__ output directory, the extracted contents
 
 __3.__ Lastly, if for any reason the main module is ran more than once a month, all downloaded files with the same name in both the __'YYYY_MM'__ and __'Current'__  output directories will be overwritten.
 
-__In short__, every month, we want to __*archive*__ the previous months __*unextracted*__ zipped files in the __*date-stamped*__ (*__YYYY_MM__*), output directory, and __*overwrite*__ the __*extracted*___ contents in the __'Current'__ output directory. 
+In short, __*every month*__, we want to __*archive*__ the previous months __*unextracted*__ zipped files in a __*YYYY_MM*__ output directory, and we want to __*overwrite*__ the __*extracted*___ contents in the __'Current'__ output directory.
+
+This might not be very clear now, but it will make more sense after we review the entire program's functionality below. 
 
 ## Getting Set Up  
 
