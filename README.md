@@ -48,12 +48,29 @@ The Python_Package contains:
 | `sangis_download.py` | The main module that runs the entire process |
 | `sangis_credentials.py` | A module used to secure sensative information from being visible |
 | `__init__.py` | A module used to mark directories on a disk as Python package directories |
-| `output` directory | The parent directory that contains multiple subdirectories |
-| `Parcels` directory | A subdirectory for storing and extracting parcel files |
-| `Roads` directory | A subdirectory for storing and extracting road files |
 
-*__Note__: The time-stamped folder is created and named after the year and month in which the main module is executed (ex. 2022_09).  
-If the main module is executed more than once a month, all downloaded files with the same name in both the __'YYYY_MM'__ and __'Current'__ folder directories will be overwritten.*  
+| Parent Output Directories | Description |
+| --- | --- |
+| `output`  | The parent directory that contains multiple subdirectories |
+| `Parcels` | A subdirectory of the output used for storing and extracting parcel files |
+| `Roads`   | A subdirectory of the output for storing and extracting road files |
+
+# Created or Overwritten Output Subdirectories
+
+| Child Output Directories | Description |
+| --- | --- |
+| `YYYY_MM` directory | A subdirectory created and one of the working directories where ZIP files are downloaded to, but not *unextracted* |
+| `'Current'` directory | A subdirectory created and one of the working directories where ZIP files are downloaded and *extracted* |
+
+*__Note__: There are a few instances you should keep in mind about the child output directories.
+
+__1.__ The "date-stamped" output directory is generated and named after the year and month in which the main module is executed (for example, __2022_09__), this means a new date-stamped output directory will be created and named after every month.
+
+__2.__ In the case of the __'Current'__ output directory, the extracted contents from the previous download month are replaced every month; however, this occurs only if the extracted files have the same name.
+
+__3.__ Lastly, if for any reason the main module is ran more than once a month, all downloaded files with the same name in both the __'YYYY_MM'__ and __'Current'__  output directories will be overwritten.
+
+__In short__, every month, we want to __*archive*__ the previous months __*unextracted*__ zipped files in the __*date-stamped*__ (*__YYYY_MM__*), output directory, and __*overwrite*__ the __*extracted*___ contents in the __'Current'__ output directory. 
 
 ## Getting Set Up  
 
