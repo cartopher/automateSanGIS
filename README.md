@@ -50,7 +50,7 @@ conda list
 | `sangis_credentials.py` | A module used to secure sensative information from being visible |  
 | `__init__.py` | A module used to mark directories on a disk as Python package directories |  
 
-#### Diectories ####
+#### Directories ####
 
 | Parent Output  | Description |  
 | --- | --- |  
