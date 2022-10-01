@@ -65,7 +65,7 @@ conda list
 | `YYYY_MM`  | A generated subdirectory, and the download working directory for unextracted zipped files |  
 | `Current` | A generated subdirectory, and the download working directory for extracted zipped files |  
 
-__Note__: There are a few instances you should keep in mind about the child output directories.
+__Important__: There are a few instances you should keep in mind about the child output directories.
 
 __1.__ The "date-stamped" output directory is generated and named after the year and month in which the main module is executed (for example, __2022_09__), this means a new date-stamped output directory will be created and named after every month.
 
