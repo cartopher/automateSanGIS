@@ -44,26 +44,26 @@ conda list
 
 #### Modules ####
 
-| Module | Description |
-| --- | --- |
-| `sangis_download.py` | The main module that runs the entire process |
-| `sangis_credentials.py` | A module used to secure sensative information from being visible |
+| Module | Description |  
+| --- | --- |  
+| `sangis_download.py` | The main module that runs the entire process |  
+| `sangis_credentials.py` | A module used to secure sensative information from being visible |  
 | `__init__.py` | A module used to mark directories on a disk as Python package directories |  
 
 #### Diectories ####
 
-| Parent Output  | Description |
-| --- | --- |
-| `output`  | The parent directory that contains multiple subdirectories |
-| `Parcels` | A subdirectory of the output used for storing and extracting parcel files |
-| `Roads`   | A subdirectory of the output for storing and extracting road files |
+| Parent Output  | Description |  
+| --- | --- |  
+| `output`  | The parent directory that contains multiple subdirectories |  
+| `Parcels` | A subdirectory of the output used for storing and extracting parcel files |  
+| `Roads`   | A subdirectory of the output for storing and extracting road files |  
 
 #### Subdirectories ####
 
-| Child Output | Description |
-| --- | --- |
-| `YYYY_MM`  | A generated subdirectory, and one of the working directories unextracted zipped files are downloaded to |
-| `Current` | A generated subdirectory, and one of the working directories extracted zipped files are downloaded to |
+| Child Output | Description |  
+| --- | --- |  
+| `YYYY_MM`  | A generated subdirectory, and the download working directory for unextracted zipped files |  
+| `Current` | A generated subdirectory, and the download working directory for extracted zipped files |  
 
 *__Note__: There are a few instances you should keep in mind about the child output directories.
 
