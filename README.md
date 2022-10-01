@@ -42,8 +42,7 @@ conda list
 ````
 ## Package Overview
 
-#### Modules ####
-
+<center>#### Modules #####</center>
 | Module | Description |  
 | --- | --- |  
 | `sangis_download.py` | The main module that runs the entire process |  
