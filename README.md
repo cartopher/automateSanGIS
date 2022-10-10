@@ -279,3 +279,4 @@ def main():
         main()
     print("Program Complete!")
 ````
+5. We conclude this demonstration by running the program to see that we've successfully downloaded and extracted two zipped files ('Assessor_Book.zip,' and PARCELS_EAST.zip) into our preferred file locations on our operating system.  
